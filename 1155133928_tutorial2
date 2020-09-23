@@ -1,0 +1,39 @@
+def bmi(weight, height):
+    bmi_var = weight / height**2
+    print(f"{bmi_var:.2f}")
+    return 18.5 < bmi_var < 25
+
+bmi(80.5, 1.75)
+
+def reverse(num):
+    print(f"Original number {num}")
+    new_num = int(str(num)[::-1])
+    if new_num==num:
+        print("The original and reverse number is the same")
+    else:
+        print("The original and reverse number is not the same\n")
+    
+reverse(125)
+reverse(121)
+
+def sum_list(lst):
+    sum_var = 0
+    for item in lst:
+        sum_var = item + sum_var
+    return sum_var
+
+sum_list([1,3,4,8,9])
+
+def two_sum(nums, target):
+    index = 0
+    for i, item in enumerate(nums):
+        current_target = target - item
+        for j, number in enumerate(nums):
+            if i!=j:
+                if number==current_target:
+                    print(f"[{i},{j}]")
+                    return
+
+two_sum([2,7,11,15], 9)
+two_sum([3,2,4], 6)
+two_sum([3,3], 6)
